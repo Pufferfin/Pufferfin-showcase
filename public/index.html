@@ -7,7 +7,7 @@
   <meta name="description" content="A complete media server, forked from Jellyfin, with an Apple TV style interface and built-in control of the *arr stack.">
   <meta name="theme-color" content="#000000">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
 
@@ -60,10 +60,10 @@
         <a href="#" data-discord target="_blank" rel="noopener">Discord</a>
       </nav>
 
-      <a class="btn btn-glass btn-sm" href="https://opencollective.com/jellyfin" target="_blank" rel="noopener">
-        <img class="btn-icon" src="logos/jellyfin.svg" alt="" width="18" height="18">
-        <span class="btn-label">Support Jellyfin</span>
-      </a>
+      <button class="btn btn-glass btn-sm" type="button" data-open-support aria-haspopup="dialog">
+        <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z" fill="currentColor"/></svg>
+        <span class="btn-label">Support</span>
+      </button>
     </div>
   </header>
 
@@ -226,6 +226,35 @@
     </div>
   </footer>
 
-  <script src="app.js?v=3" defer></script>
+  <dialog class="modal" id="support" aria-labelledby="support-title">
+    <div class="modal-card">
+      <button class="modal-close" type="button" data-close-support aria-label="Close">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <h2 id="support-title">Support the project</h2>
+      <p class="modal-lead">Pufferfin is free and open source. If it's useful to you, here's how you can help.</p>
+
+      <div class="support-options">
+        <a class="support-option" href="https://github.com/Pufferfin/Pufferfin" target="_blank" rel="noopener">
+          <img src="favicon.svg" alt="" width="48" height="48">
+          <span class="support-text">
+            <strong>Support Pufferfin</strong>
+            <span>Help us keep building the interface and the integrations.</span>
+          </span>
+          <span class="support-arrow" aria-hidden="true">›</span>
+        </a>
+        <a class="support-option" href="https://opencollective.com/jellyfin" target="_blank" rel="noopener">
+          <img src="logos/jellyfin.svg" alt="" width="48" height="48">
+          <span class="support-text">
+            <strong>Support Jellyfin</strong>
+            <span>Don't hesitate to support Jellyfin too. Pufferfin couldn't exist without it.</span>
+          </span>
+          <span class="support-arrow" aria-hidden="true">›</span>
+        </a>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="app.js?v=4" defer></script>
 </body>
 </html>

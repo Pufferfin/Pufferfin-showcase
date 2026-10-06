@@ -44,6 +44,17 @@
     }
   });
 
+  // Support modal.
+  var modal = document.getElementById('support');
+  if (modal && modal.showModal) {
+    document.querySelectorAll('[data-open-support]').forEach(function (btn) {
+      btn.addEventListener('click', function () { modal.showModal(); });
+    });
+    modal.querySelector('[data-close-support]').addEventListener('click', function () { modal.close(); });
+    // Close when clicking the backdrop.
+    modal.addEventListener('click', function (e) { if (e.target === modal) modal.close(); });
+  }
+
   // Copy buttons on code blocks.
   document.querySelectorAll('.code-copy').forEach(function (btn) {
     btn.addEventListener('click', function () {
