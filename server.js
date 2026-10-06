@@ -28,7 +28,12 @@ http.createServer((req, res) => {
     res.writeHead(400).end();
     return;
   }
-  if (pathname.endsWith('/')) pathname += 'index.html';
+  if (pathname.length > 1 && pathname.endsWith('/')) {
+    const target = '/' + pathname.replace(/^\/+|\/+$/g, '');
+    res.writeHead(301, { Location: target }).end();
+    return;
+  }
+  if (pathname === '/') pathname = '/index.html';
   else if (!path.extname(pathname)) pathname += '.html';
 
   const file = path.join(ROOT, path.normalize(pathname));
@@ -37,6 +42,25 @@ http.createServer((req, res) => {
     return;
   }
 
+  fs.stat(file, (statErr, stat) => {
+    if (statErr || !stat.isFile()) {
+      res.writeHead(404, { 'Content-Type': 'text/plain' }).end('Not found');
+      return;
+    }
+    const etag = `W/"${stat.size.toString(16)}-${stat.mtimeMs.toString(16)}"`;
+    if (req.headers['if-none-match'] === etag) {
+      res.writeHead(304, { ETag: etag }).end();
+      return;
+    }
+    serve(file, etag, res);
+  });
+}).listen(PORT, () => {
+  console.log(`Pufferfin showcase listening on :${PORT}`);
+});
+
+// HTML, CSS and JS are revalidated on every load so a deploy shows up at once;
+// images can be cached for a day.
+function serve(file, etag, res) {
   fs.readFile(file, (err, data) => {
     if (err) {
       res.writeHead(404, { 'Content-Type': 'text/plain' }).end('Not found');
@@ -45,11 +69,10 @@ http.createServer((req, res) => {
     const ext = path.extname(file).toLowerCase();
     res.writeHead(200, {
       'Content-Type': TYPES[ext] || 'application/octet-stream',
-      'Cache-Control': ext === '.html' ? 'no-cache' : 'public, max-age=3600',
+      'Cache-Control': ['.html', '.css', '.js'].includes(ext) ? 'no-cache' : 'public, max-age=86400',
+      ETag: etag,
       'X-Content-Type-Options': 'nosniff',
     });
     res.end(data);
   });
-}).listen(PORT, () => {
-  console.log(`Pufferfin showcase listening on :${PORT}`);
-});
+}
