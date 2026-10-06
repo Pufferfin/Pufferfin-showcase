@@ -33,6 +33,45 @@
     });
   }
 
+  // Discord invite: set it once here.
+  var DISCORD_URL = '#';
+  document.querySelectorAll('[data-discord]').forEach(function (a) {
+    if (DISCORD_URL === '#') {
+      a.removeAttribute('target');
+      a.addEventListener('click', function (e) { e.preventDefault(); });
+    } else {
+      a.href = DISCORD_URL;
+    }
+  });
+
+  // Copy buttons on code blocks.
+  document.querySelectorAll('.code-copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var code = btn.parentElement.querySelector('code');
+      if (!code || !navigator.clipboard) return;
+      navigator.clipboard.writeText(code.textContent).then(function () {
+        btn.textContent = 'Copied';
+        setTimeout(function () { btn.textContent = 'Copy'; }, 1600);
+      });
+    });
+  });
+
+  // Highlight the current section in the docs sidebar.
+  var docLinks = document.querySelectorAll('.docs-nav a');
+  if (docLinks.length && 'IntersectionObserver' in window) {
+    var byId = {};
+    docLinks.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        docLinks.forEach(function (a) { a.classList.remove('active'); });
+        var link = byId[entry.target.id];
+        if (link) link.classList.add('active');
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    document.querySelectorAll('.docs-body section[id]').forEach(function (sec) { spy.observe(sec); });
+  }
+
   // Header becomes glass once the page scrolls.
   var header = document.querySelector('.header');
   function onScroll() { header.classList.toggle('scrolled', window.scrollY > 8); }

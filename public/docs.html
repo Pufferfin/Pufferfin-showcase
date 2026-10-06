@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Documentation · Pufferfin</title>
+  <meta name="description" content="Install Pufferfin, connect your services and start watching.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="Pufferfin home">
+        <svg class="logo" viewBox="0 0 300 300" aria-hidden="true">
+          <g transform="translate(150 150)">
+            <g stroke="#fff" stroke-width="7" stroke-linecap="round" fill="none">
+              <line x1="0" y1="-80" x2="0" y2="-128" transform="rotate(0)"/>
+              <line x1="0" y1="-80" x2="0" y2="-112" transform="rotate(15)"/>
+              <line x1="0" y1="-80" x2="0" y2="-128" transform="rotate(30)"/>
+              <line x1="0" y1="-80" x2="0" y2="-112" transform="rotate(45)"/>
+              <line x1="0" y1="-80" x2="0" y2="-128" transform="rotate(60)"/>
+              <line x1="0" y1="-80" x2="0" y2="-112" transform="rotate(75)"/>
+              <line x1="0" y1="-80" x2="0" y2="-128" transform="rotate(90)"/>
+              <line x1="0" y1="-80" x2="0" y2="-112" transform="rotate(105)"/>
+              <line x1="0" y1="-80" x2="0" y2="-128" transform="rotate(120)"/>
+              <line x1="0" y1="-80" x2="0" y2="-112" transform="rotate(135)"/>
+              <line x1="0" y1="-80" x2="0" y2="-128" transform="rotate(150)"/>
+              <line x1="0" y1="-80" x2="0" y2="-112" transform="rotate(165)"/>
+              <line x1="0" y1="-80" x2="0" y2="-128" transform="rotate(180)"/>
+              <line x1="0" y1="-80" x2="0" y2="-112" transform="rotate(195)"/>
+              <line x1="0" y1="-80" x2="0" y2="-128" transform="rotate(210)"/>
+              <line x1="0" y1="-80" x2="0" y2="-112" transform="rotate(225)"/>
+              <line x1="0" y1="-80" x2="0" y2="-128" transform="rotate(240)"/>
+              <line x1="0" y1="-80" x2="0" y2="-112" transform="rotate(255)"/>
+              <line x1="0" y1="-80" x2="0" y2="-128" transform="rotate(270)"/>
+              <line x1="0" y1="-80" x2="0" y2="-112" transform="rotate(285)"/>
+              <line x1="0" y1="-80" x2="0" y2="-128" transform="rotate(300)"/>
+              <line x1="0" y1="-80" x2="0" y2="-112" transform="rotate(315)"/>
+              <line x1="0" y1="-80" x2="0" y2="-128" transform="rotate(330)"/>
+              <line x1="0" y1="-80" x2="0" y2="-112" transform="rotate(345)"/>
+            </g>
+            <circle r="86" fill="#fff"/>
+            <circle cx="0" cy="-6" r="38" fill="#000"/>
+            <g id="pupil">
+              <circle cx="0" cy="-3" r="23" fill="#fff"/>
+              <circle cx="7" cy="-13" r="6.5" fill="#000"/>
+            </g>
+            <path d="M -22 54 Q 0 68 22 54" fill="none" stroke="#000" stroke-width="8" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <span class="brand-name">Pufferfin</span>
+      </a>
+
+      <nav class="nav" aria-label="Sections">
+        <a href="/">Home</a>
+        <a href="/docs" aria-current="page">Documentation</a>
+        <a href="#" data-discord target="_blank" rel="noopener">Discord</a>
+      </nav>
+
+      <a class="btn btn-glass btn-sm" href="https://opencollective.com/jellyfin" target="_blank" rel="noopener">
+        <img class="btn-icon" src="/logos/jellyfin.svg" alt="" width="18" height="18">
+        <span class="btn-label">Support Jellyfin</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="docs" id="top">
+    <aside class="docs-nav" aria-label="Documentation">
+      <p class="docs-nav-title">Documentation</p>
+      <ol>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#requirements">Requirements</a></li>
+        <li><a href="#install">Installation</a></li>
+        <li><a href="#first-launch">First launch</a></li>
+        <li><a href="#services">Connecting services</a></li>
+        <li><a href="#using">Using Pufferfin</a></li>
+        <li><a href="#updating">Updating</a></li>
+        <li><a href="#help">Getting help</a></li>
+      </ol>
+    </aside>
+
+    <article class="docs-body">
+
+      <section id="introduction">
+        <p class="eyebrow">Documentation</p>
+        <h1>Getting started with Pufferfin</h1>
+        <p class="lead-sm">
+          Pufferfin is a media server built on Jellyfin. It plays what you already have and,
+          through your *arr apps, fetches what you don't. This guide takes you from nothing to
+          a working server in a few minutes.
+        </p>
+      </section>
+
+      <section id="requirements">
+        <h2>Requirements</h2>
+        <ul>
+          <li>A machine that runs <strong>Docker</strong> and <strong>Docker Compose</strong>.</li>
+          <li>A folder with your media (movies, shows, books).</li>
+          <li>Optional: Radarr, Sonarr, Prowlarr, qBittorrent, Bazarr and Shelfmark, if you want Pufferfin to download for you.</li>
+        </ul>
+        <p class="note">Already using Jellyfin? Pufferfin works the same way, so your habits carry over.</p>
+      </section>
+
+      <section id="install">
+        <h2>Installation</h2>
+        <p>Create a folder for Pufferfin, then add a <code>docker-compose.yml</code> file inside it:</p>
+        <div class="code">
+          <button class="code-copy" type="button">Copy</button>
+<pre><code>services:
+  pufferfin:
+    image: ghcr.io/pufferfin/pufferfin:latest
+    container_name: pufferfin
+    restart: unless-stopped
+    ports:
+      - "8096:8096"
+    volumes:
+      - ./config:/config
+      - ./cache:/cache
+      - /path/to/media:/media
+      - /path/to/downloads:/downloads</code></pre>
+        </div>
+        <p>Replace <code>/path/to/media</code> and <code>/path/to/downloads</code> with your own folders, then start it:</p>
+        <div class="code">
+          <button class="code-copy" type="button">Copy</button>
+<pre><code>docker compose up -d</code></pre>
+        </div>
+        <p>Pufferfin is now running at <code>http://your-server:8096</code>.</p>
+      </section>
+
+      <section id="first-launch">
+        <h2>First launch</h2>
+        <ol class="steps">
+          <li>Open <code>http://your-server:8096</code> in your browser.</li>
+          <li>Pick your language and create your admin account.</li>
+          <li>Add a library: choose a type (Movies, Shows, Books) and point it to a folder under <code>/media</code>.</li>
+          <li>Finish the setup and sign in.</li>
+        </ol>
+        <figure class="shot" aria-label="Screenshot coming soon">
+          <div class="shot-inner"><span>Setup wizard</span></div>
+        </figure>
+      </section>
+
+      <section id="services">
+        <h2>Connecting services</h2>
+        <p>
+          Everything is configured from the admin panel. Go to
+          <strong>Dashboard → Services</strong>, pick a service, and fill in two fields:
+        </p>
+        <ul>
+          <li><strong>URL</strong>: where the service runs, for example <code>http://radarr:7878</code>.</li>
+          <li><strong>API key</strong>: found in the service's own settings, under <em>General</em>.</li>
+        </ul>
+        <p>Press <strong>Test</strong> to check the connection, then <strong>Save</strong>.</p>
+        <figure class="shot" aria-label="Screenshot coming soon">
+          <div class="shot-inner"><span>Dashboard · Services</span></div>
+        </figure>
+
+        <div class="table">
+          <div class="row row-head"><span>Service</span><span>Used for</span></div>
+          <div class="row"><span><img src="/logos/radarr.svg" alt="" width="20" height="20">Radarr</span><span>Movies</span></div>
+          <div class="row"><span><img src="/logos/sonarr.svg" alt="" width="20" height="20">Sonarr</span><span>Shows</span></div>
+          <div class="row"><span><img src="/logos/prowlarr.svg" alt="" width="20" height="20">Prowlarr</span><span>Indexers</span></div>
+          <div class="row"><span><img src="/logos/qbittorrent.svg" alt="" width="20" height="20">qBittorrent</span><span>Downloads</span></div>
+          <div class="row"><span><img src="/logos/bazarr.png" alt="" width="20" height="20">Bazarr</span><span>Subtitles</span></div>
+          <div class="row"><span><img src="/logos/shelfmark.png" alt="" width="20" height="20">Shelfmark</span><span>Books and audiobooks</span></div>
+        </div>
+        <p class="note">API keys stay on your server. They are never sent back to the interface.</p>
+      </section>
+
+      <section id="using">
+        <h2>Using Pufferfin</h2>
+        <h3>Browse</h3>
+        <p>
+          The home screen shows your library alongside the full catalog. Titles you don't own
+          yet appear next to the ones you do.
+        </p>
+        <figure class="shot" aria-label="Screenshot coming soon">
+          <div class="shot-inner"><span>Home screen</span></div>
+        </figure>
+
+        <h3>Play or download</h3>
+        <p>Open any title. You'll see a single button:</p>
+        <ul>
+          <li><strong>Play</strong> if the title is already in your library.</li>
+          <li><strong>Download</strong> if it isn't. Pufferfin sends the request to the right service and the title shows up once it's ready.</li>
+        </ul>
+        <figure class="shot" aria-label="Screenshot coming soon">
+          <div class="shot-inner"><span>Title page · Play / Download</span></div>
+        </figure>
+
+        <h3>Navigate</h3>
+        <p>Use your mouse, the arrow keys, or a TV remote. <kbd>Enter</kbd> selects, <kbd>Esc</kbd> goes back.</p>
+      </section>
+
+      <section id="updating">
+        <h2>Updating</h2>
+        <p>From your Pufferfin folder, pull the new image and restart:</p>
+        <div class="code">
+          <button class="code-copy" type="button">Copy</button>
+<pre><code>docker compose pull
+docker compose up -d</code></pre>
+        </div>
+        <p>Your settings and library are kept in <code>./config</code>, so nothing is lost.</p>
+      </section>
+
+      <section id="help">
+        <h2>Getting help</h2>
+        <p>Stuck, or found a bug? We're happy to help.</p>
+        <div class="actions actions-left">
+          <a class="btn btn-solid" href="#" data-discord target="_blank" rel="noopener">Join the Discord</a>
+          <a class="btn btn-glass" href="https://github.com/Pufferfin/Pufferfin/issues" target="_blank" rel="noopener">Open an issue</a>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-copy">
+        <img class="footer-logo" src="/favicon.svg" alt="" width="26" height="26">
+        <span class="brand-name">Pufferfin</span>
+        <span class="muted">GPL-2.0</span>
+      </div>
+      <a class="btn btn-solid btn-sm" href="https://github.com/Pufferfin/Pufferfin" target="_blank" rel="noopener">
+        Support Pufferfin
+      </a>
+    </div>
+  </footer>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>

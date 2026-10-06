@@ -29,6 +29,7 @@ http.createServer((req, res) => {
     return;
   }
   if (pathname.endsWith('/')) pathname += 'index.html';
+  else if (!path.extname(pathname)) pathname += '.html';
 
   const file = path.join(ROOT, path.normalize(pathname));
   if (!file.startsWith(ROOT + path.sep)) {
