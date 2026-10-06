@@ -51,7 +51,7 @@ p { margin: 0; }
   white-space: nowrap;
   transition: transform 0.35s var(--ease), background-color 0.25s ease, box-shadow 0.35s var(--ease);
 }
-.btn svg { width: 18px; height: 18px; }
+.btn svg, .btn-icon { width: 18px; height: 18px; display: block; }
 .btn:not(.btn-static):hover { transform: scale(1.04); }
 .btn:not(.btn-static):active { transform: scale(0.98); }
 .btn:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
@@ -224,6 +224,13 @@ main { padding: 0 16px; }
   background: rgba(255, 255, 255, 0.06);
   border-color: rgba(255, 255, 255, 0.14);
 }
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+.card-logo { width: 44px; height: 44px; object-fit: contain; display: block; }
 .card-tag {
   display: inline-block;
   font-size: 12px;
@@ -231,7 +238,6 @@ main { padding: 0 16px; }
   padding: 4px 10px;
   border-radius: var(--radius-sm);
   background: var(--glass);
-  margin-bottom: 36px;
 }
 .card h3 { font-size: 24px; margin-bottom: 8px; }
 .card p { color: var(--muted); font-size: 15px; }
@@ -246,6 +252,7 @@ main { padding: 0 16px; }
   background: var(--surface);
   border: 1px solid var(--line);
 }
+.panel-logo { width: 64px; height: 64px; display: block; margin: 0 auto 24px; }
 .panel h2 { font-size: clamp(30px, 4vw, 44px); }
 .panel p { margin: 18px auto 0; max-width: 600px; color: var(--muted); }
 .panel .actions { margin-top: 30px; }
@@ -266,7 +273,9 @@ main { padding: 0 16px; }
   justify-content: space-between;
   gap: 16px;
 }
-.footer-copy { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.footer-copy { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.footer-logo { width: 26px; height: 26px; display: block; }
+.footer .muted { margin-left: 4px; }
 .footer .brand-name { font-size: 16px; }
 .muted { color: var(--faint); font-size: 14px; }
 
