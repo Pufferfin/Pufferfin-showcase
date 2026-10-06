@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pufferfin</title>
+  <meta name="description" content="A complete media server, forked from Jellyfin, with an Apple TV style interface and built-in control of the *arr stack.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Pufferfin, back to top">
+        <svg class="logo" viewBox="0 0 300 300" aria-hidden="true">
+          <g transform="translate(150 150)">
+            <g stroke="#fff" stroke-width="7" stroke-linecap="round" fill="none">
+              <line x1="0" y1="-80" x2="0" y2="-128" transform="rotate(0)"/>
+              <line x1="0" y1="-80" x2="0" y2="-112" transform="rotate(15)"/>
+              <line x1="0" y1="-80" x2="0" y2="-128" transform="rotate(30)"/>
+              <line x1="0" y1="-80" x2="0" y2="-112" transform="rotate(45)"/>
+              <line x1="0" y1="-80" x2="0" y2="-128" transform="rotate(60)"/>
+              <line x1="0" y1="-80" x2="0" y2="-112" transform="rotate(75)"/>
+              <line x1="0" y1="-80" x2="0" y2="-128" transform="rotate(90)"/>
+              <line x1="0" y1="-80" x2="0" y2="-112" transform="rotate(105)"/>
+              <line x1="0" y1="-80" x2="0" y2="-128" transform="rotate(120)"/>
+              <line x1="0" y1="-80" x2="0" y2="-112" transform="rotate(135)"/>
+              <line x1="0" y1="-80" x2="0" y2="-128" transform="rotate(150)"/>
+              <line x1="0" y1="-80" x2="0" y2="-112" transform="rotate(165)"/>
+              <line x1="0" y1="-80" x2="0" y2="-128" transform="rotate(180)"/>
+              <line x1="0" y1="-80" x2="0" y2="-112" transform="rotate(195)"/>
+              <line x1="0" y1="-80" x2="0" y2="-128" transform="rotate(210)"/>
+              <line x1="0" y1="-80" x2="0" y2="-112" transform="rotate(225)"/>
+              <line x1="0" y1="-80" x2="0" y2="-128" transform="rotate(240)"/>
+              <line x1="0" y1="-80" x2="0" y2="-112" transform="rotate(255)"/>
+              <line x1="0" y1="-80" x2="0" y2="-128" transform="rotate(270)"/>
+              <line x1="0" y1="-80" x2="0" y2="-112" transform="rotate(285)"/>
+              <line x1="0" y1="-80" x2="0" y2="-128" transform="rotate(300)"/>
+              <line x1="0" y1="-80" x2="0" y2="-112" transform="rotate(315)"/>
+              <line x1="0" y1="-80" x2="0" y2="-128" transform="rotate(330)"/>
+              <line x1="0" y1="-80" x2="0" y2="-112" transform="rotate(345)"/>
+            </g>
+            <circle r="86" fill="#fff"/>
+            <circle cx="0" cy="-6" r="38" fill="#000"/>
+            <g id="pupil">
+              <circle cx="0" cy="-3" r="23" fill="#fff"/>
+              <circle cx="7" cy="-13" r="6.5" fill="#000"/>
+            </g>
+            <path d="M -22 54 Q 0 68 22 54" fill="none" stroke="#000" stroke-width="8" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <span class="brand-name">Pufferfin</span>
+      </a>
+
+      <nav class="nav" aria-label="Sections">
+        <a href="#interface">Interface</a>
+        <a href="#stack">Integrations</a>
+        <a href="#jellyfin">Jellyfin</a>
+      </nav>
+
+      <a class="btn btn-glass btn-sm" href="https://opencollective.com/jellyfin" target="_blank" rel="noopener">
+        Support Jellyfin
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- Hero -->
+    <section class="hero">
+      <p class="eyebrow">Media server · Work in progress</p>
+      <h1>Everything you own.<br>Everything you don’t.</h1>
+      <p class="lead">
+        Pufferfin is a media server built on Jellyfin, with an Apple&nbsp;TV style interface
+        and the *arr stack built right in.
+      </p>
+      <div class="actions">
+        <a class="btn btn-solid" href="https://github.com/Pufferfin/Pufferfin" target="_blank" rel="noopener">View on GitHub</a>
+        <a class="btn btn-glass" href="#stack">How it works</a>
+      </div>
+
+      <figure class="shot shot-hero" aria-label="Screenshot coming soon">
+        <div class="shot-inner"><span>Home screen</span></div>
+      </figure>
+    </section>
+
+    <!-- Interface -->
+    <section class="section" id="interface">
+      <div class="section-head">
+        <h2>Designed for the big screen.</h2>
+        <p>Large artwork, a black background and smooth animations. Navigate with a keyboard or a remote.</p>
+      </div>
+
+      <div class="grid-2">
+        <figure class="shot" aria-label="Screenshot coming soon">
+          <div class="shot-inner"><span>Title details</span></div>
+        </figure>
+        <figure class="shot" aria-label="Screenshot coming soon">
+          <div class="shot-inner"><span>Playback</span></div>
+        </figure>
+      </div>
+
+      <div class="grid-3 points">
+        <div class="point">
+          <h3>A complete catalog</h3>
+          <p>Movies, shows and people from TMDB, audiobooks from Audible. What you don't own yet sits right next to what you do.</p>
+        </div>
+        <div class="point">
+          <h3>One button</h3>
+          <p>If the title is on your disks, it plays. If it isn't, Pufferfin goes and gets it.</p>
+        </div>
+        <div class="point">
+          <h3>Everything Jellyfin does</h3>
+          <p>Library, playback, transcoding, accounts, resume and subtitles, all kept intact.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integrations -->
+    <section class="section" id="stack">
+      <div class="section-head">
+        <h2>The *arr stack, built in.</h2>
+        <p>Connect your services once from the admin panel. Pufferfin drives them for you, with a connection test for each.</p>
+      </div>
+
+      <div class="play-demo" aria-hidden="true">
+        <span class="btn btn-solid btn-static">
+          <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
+          Play
+        </span>
+        <span class="or">or</span>
+        <span class="btn btn-glass btn-static">
+          <svg viewBox="0 0 24 24"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Download
+        </span>
+      </div>
+
+      <ul class="cards">
+        <li class="card">
+          <span class="card-tag">Movies</span>
+          <h3>Radarr</h3>
+          <p>Missing films are requested and imported straight into your library.</p>
+        </li>
+        <li class="card">
+          <span class="card-tag">Series</span>
+          <h3>Sonarr</h3>
+          <p>Whole shows, seasons or single episodes, tracked as they air.</p>
+        </li>
+        <li class="card">
+          <span class="card-tag">Indexers</span>
+          <h3>Prowlarr</h3>
+          <p>One place for your indexers, shared across every service.</p>
+        </li>
+        <li class="card">
+          <span class="card-tag">Subtitles</span>
+          <h3>Bazarr</h3>
+          <p>Subtitles in your languages, fetched as soon as a title arrives.</p>
+        </li>
+        <li class="card">
+          <span class="card-tag">Books</span>
+          <h3>Shelfmark</h3>
+          <p>Books and audiobooks, found and added to the same library.</p>
+        </li>
+        <li class="card card-muted">
+          <span class="card-tag">Downloads</span>
+          <h3>qBittorrent</h3>
+          <p>The download client behind it all, with a shared download folder.</p>
+        </li>
+      </ul>
+
+      <figure class="shot shot-wide" aria-label="Screenshot coming soon">
+        <div class="shot-inner"><span>Admin panel · Services</span></div>
+      </figure>
+    </section>
+
+    <!-- Jellyfin -->
+    <section class="section section-narrow" id="jellyfin">
+      <div class="panel">
+        <h2>Built on Jellyfin.</h2>
+        <p>
+          Pufferfin is a fork of Jellyfin, the free software media system. Most of its code is the
+          work of Jellyfin and its contributors, and upstream releases are merged regularly.
+          Pufferfin is not affiliated with or endorsed by the Jellyfin team.
+        </p>
+        <div class="actions">
+          <a class="btn btn-glass" href="https://jellyfin.org" target="_blank" rel="noopener">jellyfin.org</a>
+          <a class="btn btn-glass" href="https://github.com/Pufferfin/Pufferfin-web" target="_blank" rel="noopener">Web client</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-copy">
+        <span class="brand-name">Pufferfin</span>
+        <span class="muted">GPL-2.0 · Not yet released</span>
+      </div>
+      <a class="btn btn-solid btn-sm" href="https://github.com/Pufferfin/Pufferfin" target="_blank" rel="noopener">
+        Support Pufferfin
+      </a>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
